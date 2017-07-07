@@ -1,0 +1,53 @@
+/* archive css */
+.site-container .archives{position: relative;}
+.site-container .archives > h1{position: relative;font-size: 25px;font-weight: bold;margin: 10px 0;}
+.site-container .archives > h3{position: relative;font-size: 16px;font-weight: 300;}
+.site-container .archives > article{position: relative;border-bottom: 1px dashed lightgrey;}
+.archives .archives-post .post-date{font-size: 14px;font-weight: 100;}
+.archives .archives-post .post-title{font-size: 16px;font-weight: 300}
+.archives-post .post-title{margin-left: 10px;}
+/* before 伪类 */
+.archives::before{
+	content: "";
+	position: absolute;
+	top: 30px;
+	left: 0;
+	opacity: 0.3;
+	height: 100%;
+	width: 3px;
+	background-color: lightgrey;
+}
+.site-container .archives h1::before{
+	content: "";
+	position: absolute;
+	top:45%;
+	left:-3px;
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+	background-color: lightgrey;
+}
+.site-container .archives h3::before{
+	content: "";
+	position: absolute;
+	top:45%;
+	left:-3px;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: lightgrey;
+}
+.site-container .archives article::before{
+	content: "";
+	position: absolute;
+	top:45%;
+	left:-1px;
+	width: 6px;
+	height: 6px;
+	border-radius: 3px;
+	background-color: lightgrey;
+}
+/* hover */
+.archives > .archives-format{padding: 20px;transition: border-color 0.2s ease}
+.archives > .archives-format:hover{border-color: #000;transition: border-color 0.3s ease}
+.archives > article:hover::before{background-color: #000;transition: background-color 0.3s ease}

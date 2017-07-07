@@ -1,0 +1,13 @@
+/* tags css */
+/* tags body */
+.tags-body .tags-body-tags{text-align: center;margin: 30px auto;width: 60%;}
+.tags-body-tags a:nth-of-type(9n-8){color: #ADACA7;font-size: 20px;}
+.tags-body-tags a:nth-of-type(9n-7){color: #D8DFE2;font-size: 16px;}
+.tags-body-tags a:nth-of-type(9n-6){color: #D8DFE2;font-size: 26px;}
+.tags-body-tags a:nth-of-type(9n-5){color: #3D262A;font-size: 20px;}
+.tags-body-tags a:nth-of-type(9n-4){color: #ADACA7;font-size: 16px;}
+.tags-body-tags a:nth-of-type(9n-3){color: #ADACA7;font-size: 16px;}
+.tags-body-tags a:nth-of-type(9n-2){color: #3D262A;font-size: 26px;}
+.tags-body-tags a:nth-of-type(9n-1){color: #D8DFE2;font-size: 20px;}
+.tags-body-tags a{margin: 5px;border-bottom: 1px solid;transition: all 0.4s ease}
+.tags-body-tags a:hover{color: #000;border-color:#000;transition: all 0.3s ease-out}
