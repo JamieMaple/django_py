@@ -1,0 +1,40 @@
+/* markdown */
+.post-page .post-body{color: #555}
+#container div.post-body h1{display:block;font-size: 1.7em;font-weight:bold}
+/* h tags*/
+.post-page h1, .post-page h2, .post-page h3, .post-page h4, .post-page h5, .post-page h6{margin: 20px 0 10px;color: }
+/* 引用 */
+.post-page blockquote{padding: 0 15px;color: #666;border-left: 4px solid #ddd;}
+/* ul */
+.post-page ul{display: block;list-style-type: disc;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;}
+/* ol */
+.post-page ol{
+	display: block;
+    list-style-type: decimal;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+/* li */
+.post-page ul li {list-style: circle;display: list-item;}
+.post-page ol li {display: list-item;}
+/* hr */
+.post-page hr{margin: 20px 0;height: 1px; border: none;background-color: #ddd;}
+/* code area */
+.codehilite {
+	overflow: auto;
+    margin: 20px 0;
+    padding: 0;
+    font-size: 13px;
+    background: #f7f7f7;
+    line-height: 1.6;
+    padding: 10px;
+}
