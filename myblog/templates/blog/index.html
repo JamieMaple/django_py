@@ -1,12 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>简洁至上</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<script type="text/javascript" src="js/style.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/index.css' %}">
+	<script type="text/javascript" src="{% static 'blog/js/style.js' %}"></script>
 </head>
 <body>
 <section id="container">
@@ -32,20 +33,24 @@
 	<!-- body begin -->
 	<section class="site-container center-align">
 			<section class="posts clearfix">
+				{% for post in post_list %}
 				<article class="container-posts post-shadow">
 					<header class="post-header">
-						<a href="postPage.html" class="post-title">title</a>
+						<a href="postPage.html" class="post-title">{{ post.title }}</a>
 						<div class="post-header-meta">
-							<span class="meta-datetime"><a>2017/07/07</a></span>
+							<span class="meta-datetime"><a>{{ post.pubdate }}</a></span>
 							<span>|</span>
-							<span class="meta-category"><a href="categories.html">Category</a></span>
+							<span class="meta-category"><a href="categories.html">{{ post.cate }}</a></span>
 						</div>
 					</header>
-					<div class="post-content">text-overflow是一个比较特殊的样式，我们可以用它代替我们通常所用的标题截取函数，而且这样做对搜索引擎更加友好，如：标题文件有50 个汉字，而我们的列表可能只有300px的宽度。如果用标题截取函数</div>
+					<div class="post-content">{{ post.content }}</div>
 					<footer class="post-footer">
 						<a href="postPage.html" class="animate-color">阅读全文 »</a>
 					</footer>
 				</article>
+				{% empty %}
+				<h1>暂时还没有发布的文章！</h1>
+				{% endfor %}
 			</section>
 			<section class="pagination">
 				<a class="current" href="">1</a>

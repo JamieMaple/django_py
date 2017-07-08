@@ -36,7 +36,7 @@ a{text-decoration: none;color: black;display: inline-block}
 	-moz-box-shadow: 0 0 10px rgba(202,203,203,0.5);
 	-o-box-shadow: 0 0 10px rgba(202,203,203,0.5);
 }
-.site-container .header{font-weight: bold;font-size: 25px;text-align: center}
+.site-container .header h1{font-weight: bold;font-size: 30px;text-align: center}
 /*******************
 **site-footer part**
 *******************/

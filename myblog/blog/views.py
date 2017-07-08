@@ -7,14 +7,15 @@ def test1(request):
     return HttpResponse("Test!!")
 # 测试样例2
 def test2(request):
-    post = models.Posts.objects.get(pk=1)
-    return render(request, 'blog/test.html', {'post':post})
+    return render(request, 'blog/test.html', context={'index':'prop'})
 # ----------
+
 # --前台界面--
 
 # 主页
 def index(request):
-    return HttpResponse('Hello world')
+    post_list = models.Post.objects.all().order_by("-pubdate")
+    return render(request, 'blog/index.html', {'post_list':post_list})
 # 文章页面
 # ----------
 # 后台界面

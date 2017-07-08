@@ -2,7 +2,6 @@
 .site-container .category{text-align: center;padding: 40px;width: 20%;}
 .category a{width:75%;padding: 50px 50px}
 /* category */
-.site-container .categories-container{margin-top: 40px}
 .flex-box{display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center}
 .flex-box div a{transition: all 0.4s ease}
 .flex-box div a:hover{background-color: #000;color: #fff;transition: all 0.4s ease;}
