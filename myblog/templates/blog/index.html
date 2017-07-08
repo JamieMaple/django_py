@@ -1,43 +1,11 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<title>简洁至上</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/index.css' %}">
-	<script type="text/javascript" src="{% static 'blog/js/style.js' %}"></script>
-</head>
-<body>
-<section id="container">
-	<!-- header begin -->
-	<header class="site-header light-green shadow-part">
-		<section class="site-header-container center-align">
-			<section class="header-container">
-				<h1><a class="animate-color" href="index.html">简洁至上</a></h1>
-				<nav>
-					<li><a href="index.html">主页</a></li>
-					<li><a href="tags/tags.html">标签</a></li>
-					<li><a href="categories/categories.html">分类</a></li>
-				</nav>
-			</section>
-			<section class="header-banner center-align">
-				<div class="banner-content">
-					<h1>LessIsBetter</h1>
-				</div>
-			</section>
-		</section>
-	</header>
-	<!-- header end -->
-	<!-- body begin -->
-	<section class="site-container center-align">
+{% extends 'base.html' %}
+	{% block main %}
 			<section class="posts clearfix">
-				{% for post in post_list %}
+			{% for post in post_list %}
 				<article class="container-posts post-shadow">
 					<header class="post-header">
-						<a href="postPage.html" class="post-title">{{ post.title }}</a>
-						<div class="post-header-meta">
+						<a href="{{ post.get_absolute_url }}" class="post-title">{{ post.title }}</a>
+					 	<div class="post-header-meta">
 							<span class="meta-datetime"><a>{{ post.pubdate }}</a></span>
 							<span>|</span>
 							<span class="meta-category"><a href="categories.html">{{ post.cate }}</a></span>
@@ -45,29 +13,18 @@
 					</header>
 					<div class="post-content">{{ post.content }}</div>
 					<footer class="post-footer">
-						<a href="postPage.html" class="animate-color">阅读全文 »</a>
+						<a href="{{ post.get_absolute_url }}" class="animate-color">阅读全文 »</a>
 					</footer>
 				</article>
-				{% empty %}
+			{% empty %}
 				<h1>暂时还没有发布的文章！</h1>
-				{% endfor %}
+			{% endfor %}
 			</section>
+
 			<section class="pagination">
 				<a class="current" href="">1</a>
 				<a href="">2</a>
 				<a href="">3</a>
 				<a href="">4</a>
 			</section>
-	</section>
-	<!-- footer begin -->
-	<footer id="footer" class="site-footer light-green shadow-part">
-		<section class="footer-container">
-			<div>Jamie Maple 制作</div>
-			<div>Django1.11 + Python3 + sqlite3</div>
-		</section>
-	</footer>
-	<!-- footer end -->
-	<!-- body end -->
-</section>
-</body>
-</html>
+	{% endblock main %}

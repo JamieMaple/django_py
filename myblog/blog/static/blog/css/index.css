@@ -47,10 +47,8 @@
 .posts .post-content{
 	line-height:25px;
 	margin-bottom: 15px;
-	/* -webkit- para ellipsis */
-	display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     overflow: hidden;
 }
 	/*post_footer part*/
