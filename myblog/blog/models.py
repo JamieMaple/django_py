@@ -9,10 +9,17 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('blog:category', kwargs={'pk':self.pk})
+
 class Tag(models.Model):
     name = models.CharField(max_length=30)
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('blog:tag', kwargs={'pk':self.pk})
+
 class Post(models.Model):
     title = models.CharField(max_length=30)
     content = models.TextField(null=True)

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title%}
+	标签 | 简洁至上
+{% endblock title%}
+	{% block main %}
+	<!-- body begin -->
+	<section class="site-container center-align">
+		<header class="header">
+			<h1>标签云</h1>
+		</header>
+		<section class="tags-body">
+			<div class="tags-body-tags">
+				{% for tag in tags%}
+					<a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
+				{% empty %}
+				<h1>暂时没有标签</h1>
+				{% endfor %}
+			</div>
+		</section>
+	</section>
+	{% endblock main%}

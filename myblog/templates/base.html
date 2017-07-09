@@ -2,7 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>简洁至上</title>
+	<title>
+		{% block title%}
+		{% endblock title%}
+	</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 	<!-- css -->
@@ -26,8 +29,8 @@
 				<h1><a class="animate-color" href="/">简洁至上</a></h1>
 				<nav>
 					<li><a href="/">主页</a></li>
-					<li><a href="tags/tags.html">标签</a></li>
-					<li><a href="categories/categories.html">分类</a></li>
+					<li><a href="/tags">标签</a></li>
+					<li><a href="/categories">分类</a></li>
 				</nav>
 			</section>
 			<section class="header-banner center-align">
