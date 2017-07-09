@@ -9,7 +9,7 @@
 			</header>
 			<section class="categories-container center-align flex-box">
 				{% for category in categories %}
-				<div class="category"><a class="post-shadow" href="{{ category.get_absolute_url }}">{{ category.name }}</a></div>
+				<div class="category"><a class="post-shadow" href="{{ category.get_absolute_url }}"><i class="icon-folder-empty"></i>{{ category.name }}</a></div>
 				{% empty %}
 				<h1>暂时没有分类</h1>
 				{% endfor %}

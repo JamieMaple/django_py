@@ -3,18 +3,23 @@
 	简洁至上
 	{% endblock title%}
 	{% block main %}
-			<section class="posts clearfix">
+			<section class="posts">
 			{% for post in post_list %}
 				<article class="container-posts post-shadow">
 					<header class="post-header">
-						<a href="{{ post.get_absolute_url }}" class="post-title">{{ post.title }}</a>
-					 	<div class="post-header-meta">
-							<span class="meta-datetime"><a>{{ post.pubdate }}</a></span>
+						<a href="{{ post.get_absolute_url }}" class="post-title">{{ post.title}}</a>
+						<div class="post-header-meta">
+							<span class="meta-datetime">
+								<i class="icon-calendar-empty"></i>
+								<a>{{ post.pubdate|date:"Y/m/d" }}</a></span>
 							<span>|</span>
-							<span class="meta-category"><a href="categories.html">{{ post.cate }}</a></span>
+							<span class="meta-category">
+								<i class="icon-folder-empty"></i>
+								<a href="categories.html" class="meta-category">{{ post.category }}</a>
+							</span>
 						</div>
 					</header>
-					<div class="post-content">{{ post.content | safe }}</div>
+					<div class="post-content">{{ post.content|safe }}</div>
 					<footer class="post-footer">
 						<a href="{{ post.get_absolute_url }}" class="animate-color">阅读全文 »</a>
 					</footer>

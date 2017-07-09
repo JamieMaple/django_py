@@ -18,14 +18,15 @@ def detail(request, pk):
                                      extensions=['markdown.extensions.extra',
                                                  'markdown.extensions.codehilite',
                                                  'markdown.extensions.toc',])
-    return render(request, 'blog/postPage.html', {'post':post})
+    tags = models.Tag.objects.filter(post=post)
+    return render(request, 'blog/postPage.html', {'post':post, 'tags':tags})
 
 # tags
 def get_tags(request):
     tags = models.Tag.objects.all().order_by("name");
     return render(request, 'blog/tags.html', {'tags':tags})
 def get_tags_tag(request, pk):
-    tag = get_object_or_404(models.Tag, pk=pk)
+    tag = models.Tag.objects.get(pk=pk)
     post_list = models.Post.objects.filter(tags = tag).order_by("-pubdate")
     return render(request, 'blog/tags/tagPage.html', {'post_list':post_list, 'tag':tag})
 
@@ -35,7 +36,7 @@ def get_categories(request):
     return render(request, 'blog/categories.html', {'categories': categories})
 
 def get_categories_category(request, pk):
-    category = get_object_or_404(models.Category, pk=pk)
+    category = models.Category.objects.get(pk=pk)
     post_list = models.Post.objects.filter(category=category).order_by("-pubdate")
     return render(request, 'blog/categories/categoryPage.html', {'post_list':post_list, 'category':category})
 # ----------

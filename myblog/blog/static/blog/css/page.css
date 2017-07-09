@@ -3,12 +3,14 @@
 /* postHeader Part */
 .post-page{margin: 0 100px 0;padding: 40px 30px 50px}
 .post-page .post-header{text-align: center;font-weight: bold;font-size: 30px;}
-.post-page .post-header .post-meta{font-weight: 300;font-size: 16px;}
+.post-page .post-header .post-meta{margin:5px 0;font-weight: 200;font-size: 14px;}
 /* postBody Part */
 .post-page .post-body{margin-top: 10px;font-size: 18px;font-weight: 400}
 /* footerTags */
 .post-page .post-footer .post-tags{margin-top: 40px;}
+.post-page .post-footer .post-tags .tag{margin-right: 10px;padding: 5px 10px 5px 5px;background-color: #f5f5f5;font-size: 16px}
+.post-page .post-footer .post-tags .tag:hover{background-color: lightgrey;border-radius: 3px}
 /* footerPages nav */
-.post-page .post-footer .post-nav{margin-top: 30px;padding-top:10px;width: 100%;border-top: 1px solid #eee;display: table}
+.post-page .post-footer .post-nav{margin-top: 30px;padding-top:10px;width: 100%;border-top: 1px solid #eee;display: table;font-size: 18px}
 .post-nav .nav-left{display: table-cell;text-align: left;width: 50%}
 .post-nav .nav-right{display: table-cell;text-align: right;width: 50%}

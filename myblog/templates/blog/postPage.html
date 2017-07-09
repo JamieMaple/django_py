@@ -17,13 +17,17 @@
 			</div>
 			<footer class="post-footer">
 				<div class="post-tags">
-					<a href="">tag</a>
-					<a href="">tag</a>
+					{% for tag in tags %}
+						<a class="tag" href="{{ tag.get_absolute_url }}">
+							<i class="icon-tag"></i>
+							{{ tag.name }}
+						</a>
+					{% endfor %}
 				</div>
 				<div class="post-nav">
-					<div class="nav-left"><a href="">< left</a></div>
+					<div class="nav-left"><a href="#"><i class="icon-left-open"></i>left</a></div>
 					<span class="span-divider"></span>
-					<div class="nav-right"><a href="">right ></a></div>
+					<div class="nav-right"><a href="#">right<i class="icon-right-open"></i></a></div>
 				</div>
 			</footer>
 		</article>

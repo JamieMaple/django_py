@@ -41,7 +41,6 @@ a{text-decoration: none;color: black;display: inline-block}
                                 **site-footer part**
                                 *******************/
 .site-footer{
-	clear: both;
 	position: absolute;
 	display: block;
 	width: 100%;
@@ -51,6 +50,7 @@ a{text-decoration: none;color: black;display: inline-block}
 	padding: 20px 0;
 	text-align: center;
 }
+.site-footer .footer-container .footer-header{font-size: 14px}
 /* clear float */
 .clearfix::after{content: " ";visibility: hidden; display: block;clear: left;height: 0;}
 /* pagination begin */

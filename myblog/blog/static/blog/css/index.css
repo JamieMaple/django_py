@@ -1,12 +1,13 @@
 /* posts begin */
 	/* post-models */
+.posts{text-align: center}
 .posts .container-posts{
-	height: 20%;
-	width: 20%;
-	float: left;
+    max-width: 300px;
+    width: 15%;
+	min-width: 200px;
+	display: inline-block;
 	position: relative;
 	border-bottom: none;
-	text-align: center;
 	margin: 40px 40px;
 	padding: 30px 20px;
 	text-align: left;
@@ -15,7 +16,7 @@
 	/*post_header part*/
 .posts .post-header .post-title{display: inline-block;position: relative;font-size: 26px;font-weight: 400;margin-bottom: 10px}
 .posts .post-header div{margin-bottom: 10px}
-.posts .post-header div span{margin:5px;}
+.posts .post-header div span{font-size: 12px;}
 		/* post_header anmiate */
 .container-posts .post-header .post-title::before{
 	content: "";
