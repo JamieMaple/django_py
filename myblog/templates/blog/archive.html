@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load paginate_tags %}
+    {% block title%}
+	{% if year and month %}
+		{{ year }}/{{ month }}
+	{% endif %}
+	{% if category %}
+		{{ category.name }}
+	{% endif %}
+	{% if tag %}
+		{{ tag.name }}
+	{% endif %}
+	 | 归档 | 简洁至上
+    {% endblock title%}
+	{% block main %}
+        <section class="archives">
+				<h3 class="archives-format">未完待续...</h3>
+				<h1 class="archives-format">
+					{% if year and month %}
+					{{ year }}/{{ month }}
+					{% endif %}
+					{% if category %}
+					{{ category.name }}
+					{% endif %}
+					{% if tag %}
+					{{ tag.name }}
+					{% endif %}
+				</h1>
+				{% paginate post_list 10 %}
+				{% for post in article_list %}
+					<article class="archives-post archives-format">
+						<span class="post-date">{{ post.pubdate|date:"m/d" }}</span><a class="post-title" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+					</article>
+				{% empty %}
+				<h1>暂时没有标签</h1>
+				{% endfor %}
+			</section>
+    {% endblock main %}

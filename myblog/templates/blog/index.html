@@ -1,38 +1,40 @@
 {% extends 'base.html' %}
+{% load paginate_tags %}
 	{% block title%}
 	简洁至上
 	{% endblock title%}
 	{% block main %}
 			<section class="posts">
-			{% for post in post_list %}
-				<article class="container-posts post-shadow">
-					<header class="post-header">
-						<a href="{{ post.get_absolute_url }}" class="post-title">{{ post.title}}</a>
-						<div class="post-header-meta">
-							<span class="meta-datetime">
-								<i class="icon-calendar-empty"></i>
-								<a>{{ post.pubdate|date:"Y/m/d" }}</a></span>
-							<span>|</span>
-							<span class="meta-category">
-								<i class="icon-folder-empty"></i>
-								<a href="categories.html" class="meta-category">{{ post.category }}</a>
-							</span>
-						</div>
-					</header>
-					<div class="post-content">{{ post.content|safe }}</div>
-					<footer class="post-footer">
-						<a href="{{ post.get_absolute_url }}" class="animate-color">阅读全文 »</a>
-					</footer>
-				</article>
-			{% empty %}
-				<h1>暂时还没有发布的文章！</h1>
-			{% endfor %}
+				{% paginate post_list 10 %}
+					{% for post in article_list %}
+					<article class="container-posts post-shadow">
+						<header class="post-header">
+							<a href="{{ post.get_absolute_url }}" class="post-title">{{ post.title|title}}</a>
+							<div class="post-header-meta">
+								<span class="meta-datetime">
+									<i class="icon-calendar-empty"></i>
+									<a>{{ post.pubdate|date:"Y-m-d" }}</a></span>
+								<span>|</span>
+								<span class="meta-category">
+									<i class="icon-folder-empty"></i>
+									<a href="{{ post.category.get_absolute_url }}" class="meta-category">{{ post.category }}</a>
+								</span>
+							</div>
+						</header>
+						<div class="post-content">{{ post.content|safe }}</div>
+						<footer class="post-footer">
+							<a href="{{ post.get_absolute_url }}" class="animate-color">阅读全文 »</a>
+						</footer>
+					</article>
+					{% empty %}
+					<h1>暂时还没有发布的文章！</h1>
+				{% endfor %}
 			</section>
-
-			<section class="pagination">
-				<a class="current" href="#">1</a>
-				<a href="#">2</a>
-				<a href="#">3</a>
-				<a href="#">4</a>
-			</section>
+		{% include 'blog/pagination.html' %}
 	{% endblock main %}
+	<!--<section class="pagination">-->
+				<!--<a class="current" href="#">1</a>-->
+				<!--<a href="#">2</a>-->
+				<!--<a href="#">3</a>-->
+				<!--<a href="#">4</a>-->
+    <!--</section>-->

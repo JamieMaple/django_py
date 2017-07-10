@@ -1,0 +1,8 @@
+/* archives css */
+.site-container archives-container .archives-container{text-align: center;margin: 30px;width: 20%;}
+/* archive */
+.archives-container .archive a{padding: 50px;text-align: center;}
+.flex-box{display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center}
+.archives-container div{margin: 20px;min-width: 160px;min-height: 120px}
+.archives-container div a{transition: all 0.4s ease}
+.archives-container div a:hover{background-color: #000;color: #fff;transition: all 0.4s ease;}

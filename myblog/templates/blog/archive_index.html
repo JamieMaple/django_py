@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+    {% block title%}
+	归档 | 简洁至上
+    {% endblock title%}
+    {% block main %}
+        <header class="header">
+				<h1>归档</h1>
+		</header>
+		<section class="archives-container center-align flex-box">
+            {% for date in dates %}
+				<div class="archive"><a class="post-shadow" href="/archives/{{ date.year }}/{{ date.month }}"><i class="icon-th-list"></i>{{ date.year }}/{{ date.month }}</a></div>
+            {% empty %}
+            <h1>暂时没有分类</h1>
+            {% endfor %}
+		</section>
+    {% endblock main %}

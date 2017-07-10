@@ -7,9 +7,9 @@
 			<header class="post-header">
 				<h1>{{ post.title }}</h1>
 				<div class="post-meta">
-					<span class="meta-datetime"><a>{{ post.pubdate }}</a></span>
+					<span class="meta-datetime"><i class="icon-calendar-empty"></i><a>发布于 {{ post.pubdate|date:"y/m/d" }}</a></span>
 					<span>|</span>
-					<span class="meta-category"><a href="categories.html">Category</a></span>
+					<span class="meta-category"><i class="icon-folder-empty"></i><a href="{{ post.category.get_absolute_url }}">{{ post.category }}</a></span>
 				</div>
 			</header>
 			<div class="post-body">
@@ -25,9 +25,13 @@
 					{% endfor %}
 				</div>
 				<div class="post-nav">
-					<div class="nav-left"><a href="#"><i class="icon-left-open"></i>left</a></div>
+					{% if post.next %}
+					<div class="nav-left"><a href="{{ post.next.get_absolute_url }}"><i class="icon-left-open"></i>{{ post.next.title }}</a></div>
+					{% endif %}
 					<span class="span-divider"></span>
-					<div class="nav-right"><a href="#">right<i class="icon-right-open"></i></a></div>
+					{% if post.previous %}
+					<div class="nav-right"><a href="{{ post.previous.get_absolute_url }}">{{ post.previous.title }}<i class="icon-right-open"></i></a></div>
+					{% endif %}
 				</div>
 			</footer>
 		</article>

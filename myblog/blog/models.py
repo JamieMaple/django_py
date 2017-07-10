@@ -31,5 +31,16 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def next(self):
+        try:
+            return Post.objects.get(pk=self.pk+1)
+        except:
+            return None
+    def previous(self):
+        try:
+            return Post.objects.get(pk=self.pk-1)
+        except:
+            return None
+
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk':self.pk})
