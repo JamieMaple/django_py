@@ -21,7 +21,7 @@ a{text-decoration: none;color: black;display: inline-block}
 .site-header .header-container{display: block;height: 30px;padding: 20px;}
 .site-header .header-container h1{float: left;font-size: 25px;}
 .header-container nav{float: right;}
-.header-container nav li{margin: 6px 0 0 15px}
+.header-container nav li{margin: 0 5px}
 .site-header .header-banner{height: 150px;padding: 20px;}
 .header-banner .banner-content{margin: 20px 20px;}
 .header-banner .banner-content h1{font-size: 35px;}
